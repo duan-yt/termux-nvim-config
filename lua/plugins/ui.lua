@@ -115,6 +115,7 @@ return {
       { "<A-9>", "<CMD>BufferGoto 9<CR>",       mode = {"n"}, desc = "[Buffer] Go to buffer 9"    },
       { "<A-h>", "<CMD>BufferPrevious<CR>",     mode = {"n"}, desc = "[Buffer] Previous buffer"   },
       { "<A-l>", "<CMD>BufferNext<CR>",         mode = {"n"}, desc = "[Buffer] Next buffer"       },
+      { "<A-w>", "<CMD>BufferClose<CR>",        mode = {"n"}, desc = "[Buffer] Close buffer"      },
     },
     opts = {
       animation = false,
@@ -201,3 +202,4 @@ return {
     }
   },
 }
+
