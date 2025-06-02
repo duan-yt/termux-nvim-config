@@ -6,15 +6,15 @@ vim.opt.relativenumber = true
 
 vim.wo.cursorline = true
 vim.opt.list = true
-vim.opt.listchars = { tab = '>-', trail = '-' }
+vim.opt.listchars = { tab = ">-", trail = "-" }
 vim.opt.ignorecase = true
 vim.opt.smartcase = true
 
 vim.opt.hlsearch = true
 vim.opt.incsearch = true
 
-vim.opt.mouse = 'a'
-vim.opt.clipboard = 'unnamedplus'
+vim.opt.mouse = "a"
+vim.opt.clipboard = "unnamedplus"
 
 vim.opt.scrolloff = 5
 vim.opt.sidescrolloff = 10
@@ -41,9 +41,9 @@ vim.opt.splitright = true
 
 vim.opt.termguicolors = true
 
-vim.opt.whichwrap:append('<,>,h,l,[,],~')
+vim.opt.whichwrap:append("<,>,h,l,[,],~")
 
-require('config.lazy')
+require("base")
+require("keymapping")
 
-require('keymapping')
-require('base')
+require("config.lazy")

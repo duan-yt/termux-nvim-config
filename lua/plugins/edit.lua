@@ -6,4 +6,5 @@ return {
       ignored_next_char = "[%w%.]", -- will ignore alphanumeric and `.` symbol
     },
   },
+  { "mg979/vim-visual-multi" },
 }

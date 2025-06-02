@@ -13,10 +13,10 @@ return {
   },
 
   {
-    'nvim-lualine/lualine.nvim',
+    "nvim-lualine/lualine.nvim",
     dependencies = {
-       'nvim-tree/nvim-web-devicons',
-       "AndreM222/copilot-lualine" ,
+      "nvim-tree/nvim-web-devicons",
+      "AndreM222/copilot-lualine",
     },
     opts = {
       options = {
@@ -35,18 +35,27 @@ return {
       },
       winbar = {
         lualine_a = {
-          "filename"
+          "filename",
         },
         lualine_b = {
-          { function() return " " end, color = 'Comment'},
+          {
+            function()
+              return " "
+            end,
+            color = "Comment",
+          },
         },
         lualine_x = {
-          "lsp_status"
-        }
+          "lsp_status",
+        },
       },
       inactive_winbar = {
         -- Always show winbar
-        lualine_b = { function() return " " end },
+        lualine_b = {
+          function()
+            return " "
+          end,
+        },
       },
     },
     config = function(_, opts)
@@ -89,33 +98,105 @@ return {
       table.insert(opts.sections.lualine_c, copilot)
 
       require("lualine").setup(opts)
-    end
+    end,
   },
 
   {
-    'romgrk/barbar.nvim',
-    version = '^1.0.0', -- optional: only update when a new 1.x version is released
+    "romgrk/barbar.nvim",
+    version = "^1.0.0", -- optional: only update when a new 1.x version is released
     dependencies = {
-      'lewis6991/gitsigns.nvim',
-      'nvim-tree/nvim-web-devicons',
+      "lewis6991/gitsigns.nvim",
+      "nvim-tree/nvim-web-devicons",
     },
-    init = function() vim.g.barbar_auto_setup = false end,
+    init = function()
+      vim.g.barbar_auto_setup = false
+    end,
     event = { "VeryLazy" },
     keys = {
-      { "<A-<>", "<CMD>BufferMovePrevious<CR>", mode = {"n"}, desc = "[Buffer] Move buffer left"  },
-      { "<A->>", "<CMD>BufferMoveNext<CR>",     mode = {"n"}, desc = "[Buffer] Move buffer right" },
-      { "<A-1>", "<CMD>BufferGoto 1<CR>",       mode = {"n"}, desc = "[Buffer] Go to buffer 1"    },
-      { "<A-2>", "<CMD>BufferGoto 2<CR>",       mode = {"n"}, desc = "[Buffer] Go to buffer 2"    },
-      { "<A-3>", "<CMD>BufferGoto 3<CR>",       mode = {"n"}, desc = "[Buffer] Go to buffer 3"    },
-      { "<A-4>", "<CMD>BufferGoto 4<CR>",       mode = {"n"}, desc = "[Buffer] Go to buffer 4"    },
-      { "<A-5>", "<CMD>BufferGoto 5<CR>",       mode = {"n"}, desc = "[Buffer] Go to buffer 5"    },
-      { "<A-6>", "<CMD>BufferGoto 6<CR>",       mode = {"n"}, desc = "[Buffer] Go to buffer 6"    },
-      { "<A-7>", "<CMD>BufferGoto 7<CR>",       mode = {"n"}, desc = "[Buffer] Go to buffer 7"    },
-      { "<A-8>", "<CMD>BufferGoto 8<CR>",       mode = {"n"}, desc = "[Buffer] Go to buffer 8"    },
-      { "<A-9>", "<CMD>BufferGoto 9<CR>",       mode = {"n"}, desc = "[Buffer] Go to buffer 9"    },
-      { "<A-h>", "<CMD>BufferPrevious<CR>",     mode = {"n"}, desc = "[Buffer] Previous buffer"   },
-      { "<A-l>", "<CMD>BufferNext<CR>",         mode = {"n"}, desc = "[Buffer] Next buffer"       },
-      { "<A-w>", "<CMD>BufferClose<CR>",        mode = {"n"}, desc = "[Buffer] Close buffer"      },
+      {
+        "<A-<>",
+        "<CMD>BufferMovePrevious<CR>",
+        mode = { "n" },
+        desc = "[Buffer] Move buffer left",
+      },
+      {
+        "<A->>",
+        "<CMD>BufferMoveNext<CR>",
+        mode = { "n" },
+        desc = "[Buffer] Move buffer right",
+      },
+      {
+        "<A-1>",
+        "<CMD>BufferGoto 1<CR>",
+        mode = { "n" },
+        desc = "[Buffer] Go to buffer 1",
+      },
+      {
+        "<A-2>",
+        "<CMD>BufferGoto 2<CR>",
+        mode = { "n" },
+        desc = "[Buffer] Go to buffer 2",
+      },
+      {
+        "<A-3>",
+        "<CMD>BufferGoto 3<CR>",
+        mode = { "n" },
+        desc = "[Buffer] Go to buffer 3",
+      },
+      {
+        "<A-4>",
+        "<CMD>BufferGoto 4<CR>",
+        mode = { "n" },
+        desc = "[Buffer] Go to buffer 4",
+      },
+      {
+        "<A-5>",
+        "<CMD>BufferGoto 5<CR>",
+        mode = { "n" },
+        desc = "[Buffer] Go to buffer 5",
+      },
+      {
+        "<A-6>",
+        "<CMD>BufferGoto 6<CR>",
+        mode = { "n" },
+        desc = "[Buffer] Go to buffer 6",
+      },
+      {
+        "<A-7>",
+        "<CMD>BufferGoto 7<CR>",
+        mode = { "n" },
+        desc = "[Buffer] Go to buffer 7",
+      },
+      {
+        "<A-8>",
+        "<CMD>BufferGoto 8<CR>",
+        mode = { "n" },
+        desc = "[Buffer] Go to buffer 8",
+      },
+      {
+        "<A-9>",
+        "<CMD>BufferGoto 9<CR>",
+        mode = { "n" },
+        desc = "[Buffer] Go to buffer 9",
+      },
+      {
+        "<A-h>",
+        "<CMD>BufferPrevious<CR>",
+        mode = { "n" },
+        desc = "[Buffer] Previous buffer",
+      },
+      {
+        "<A-l>",
+        "<CMD>BufferNext<CR>",
+        mode = { "n" },
+        desc = "[Buffer] Next buffer",
+      },
+      {
+        "<A-w>",
+        "<CMD>BufferClose<CR>",
+        mode = { "n" },
+        desc = "[Buffer] Close buffer",
+      },
     },
     opts = {
       animation = false,
@@ -132,21 +213,22 @@ return {
 
   {
     "nvim-tree/nvim-tree.lua",
-    version = "*",
-    dependencies = {
-      "nvim-tree/nvim-web-devicons",
-    },
+    dependencies = { "nvim-tree/nvim-web-devicons" },
     keys = {
-      { "<leader>e", "<CMD>NvimTreeToggle<CR>", mode = {"n"}, desc = "[NvimTree] Toggle NvimTree" },
+      {
+        "<leader>e",
+        "<CMD>NvimTreeToggle<CR>",
+        desc = "[Explorer] Toggle NvimTree",
+      },
     },
-    opts = {}
+    opts = {},
   },
 
   {
     "HiPhish/rainbow-delimiters.nvim",
     main = "rainbow-delimiters.setup",
     submodules = false,
-    opts = {}
+    opts = {},
   },
 
   {
@@ -161,7 +243,11 @@ return {
       -- {"rcarriga/nvim-notify", opts = {background_colour = "#000000"}}
     },
     keys = {
-      { "<leader>sN", "<CMD>Noice pick<CR>", desc = "[Noice] Pick history messages" }, -- FIXME: Currently unusable
+      {
+        "<leader>sN",
+        "<CMD>Noice pick<CR>",
+        desc = "[Noice] Pick history messages",
+      }, -- FIXME: Currently unusable
       { "<leader>N", "<CMD>Noice<CR>", desc = "[Noice] Show history messages" },
     },
 
@@ -195,11 +281,16 @@ return {
       },
       routes = {
         -- Hide search count
-        { filter = { event = "msg_show", kind = "search_count", }, opts = { skip = true }, },
+        {
+          filter = { event = "msg_show", kind = "search_count" },
+          opts = { skip = true },
+        },
         -- Hide written message
-        { filter = { event = "msg_show", kind = "", }, opts = { skip = true }, },
+        {
+          filter = { event = "msg_show", kind = "" },
+          opts = { skip = true },
+        },
       },
-    }
+    },
   },
 }
-

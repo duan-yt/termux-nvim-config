@@ -6,8 +6,6 @@ vim.api.nvim_create_autocmd("TextYankPost", {
   end,
 })
 
--- formatting
-vim.keymap.set("n", "<leader>f", function() vim.lsp.buf.format() end, { desc = "LSP Format" })
 -- terminal
 local floating_term_win = nil
 local floating_term_buf = nil
@@ -25,7 +23,7 @@ function OpenFloatingTerminal()
     height = height,
     row = row,
     col = col,
-    border = "rounded"
+    border = "rounded",
   }
   floating_term_win = vim.api.nvim_open_win(floating_term_buf, true, opts)
   vim.fn.termopen(vim.o.shell)
@@ -38,7 +36,15 @@ function CloseFloatingTerminal()
   end
 end
 
-vim.api.nvim_set_keymap('n', '<leader>ft', '<cmd>lua OpenFloatingTerminal()<CR>'
-, { noremap = true, silent = true })
-vim.api.nvim_set_keymap('t', '<Esc><Esc>', '<C-\\><C-n>:lua CloseFloatingTerminal()<CR>'
-, { noremap = true, silent = true })
+vim.api.nvim_set_keymap(
+  "n",
+  "<leader>ft",
+  "<cmd>lua OpenFloatingTerminal()<CR>",
+  { noremap = true, silent = true }
+)
+vim.api.nvim_set_keymap(
+  "t",
+  "<Esc><Esc>",
+  "<C-\\><C-n>:lua CloseFloatingTerminal()<CR>",
+  { noremap = true, silent = true }
+)
