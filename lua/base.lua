@@ -38,7 +38,7 @@ end
 
 vim.api.nvim_set_keymap(
   "n",
-  "<leader>ft",
+  "<leader>tt",
   "<cmd>lua OpenFloatingTerminal()<CR>",
   { noremap = true, silent = true }
 )
