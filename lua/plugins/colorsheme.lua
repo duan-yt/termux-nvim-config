@@ -5,12 +5,12 @@ return {
     priority = 1000,
     opts = {
       custom_highlights = function(colors)
-      return {
-          LineNr     = { fg = colors.surface2 },
-          Visual     = { bg = colors.overlay0 },
-          Search     = { bg = colors.surface2 },
-          IncSearch  = { bg = colors.lavender },
-          CurSearch  = { bg = colors.lavender },
+        return {
+          LineNr = { fg = colors.surface2 },
+          Visual = { bg = colors.overlay0 },
+          Search = { bg = colors.surface2 },
+          IncSearch = { bg = colors.lavender },
+          CurSearch = { bg = colors.lavender },
           MatchParen = { bg = colors.lavender, fg = colors.base, bold = true },
         }
       end,
@@ -22,11 +22,13 @@ return {
         noice = true,
         nvimtree = true,
         rainbow_delimiters = true,
-      }
+        telescope = true,
+      },
     },
     config = function(_, opts)
       require("catppuccin").setup(opts)
       vim.cmd.colorscheme("catppuccin")
-    end
-  }
-}
+    end,
+  },
+},
+  vim.api.nvim_set_hl(0, "@Comment", { italic = false }) -- make comments not italic
